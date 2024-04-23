@@ -58,7 +58,9 @@ namespace csharp_calcolatrice
             // Se l'esponente è negativo, calcola l'inverso della potenza positiva
             else if (Esponente < 0)
             {
-                for (int i = 0; i < Math.Abs(Esponente); i++)
+                Esponente.ToString().Remove(0, 1);
+                Esponente = (int)Esponente;
+                for (int i = 0; i < Esponente; i++)
                 {
                     res /= Base;
                 }
