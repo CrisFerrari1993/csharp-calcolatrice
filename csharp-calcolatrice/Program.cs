@@ -6,13 +6,6 @@ namespace csharp_calcolatrice
     {
         static void Main(string[] args)
         {
-
-            Console.WriteLine(Calcolatrice.PotenzaVer4(2, -3));
-            Console.WriteLine(Calcolatrice.PotenzaVer4(2, 3));
-            Console.WriteLine(Calcolatrice.PotenzaVer4(-2, 3));
-            Console.WriteLine(Calcolatrice.PotenzaVer4(0, -1));
-
-
             string userChoice = "";
             
             while (userChoice != "esci")
@@ -28,7 +21,7 @@ namespace csharp_calcolatrice
                             var n1 = int.Parse(Console.ReadLine());
                             Console.WriteLine("Inserisci un'altro numero");
                             var n2 = int.Parse(Console.ReadLine());
-                            Console.WriteLine(CalcoliHelper.Somma(n1, n2));
+                            Console.WriteLine($"La somma di {n1} e {n2} è: {CalcoliHelper.Somma(n1, n2)}");
                             break;
                         }
                     case "2":
@@ -38,7 +31,7 @@ namespace csharp_calcolatrice
                             var n1 = int.Parse(Console.ReadLine());
                             Console.WriteLine("Inserisci un'altro numero");
                             var n2 = int.Parse(Console.ReadLine());
-                            Console.WriteLine(CalcoliHelper.Differenza(n1, n2));
+                            Console.WriteLine($"La differenza fra {n1} e {n2} è: {CalcoliHelper.Differenza(n1, n2)}");
                             break;
                         }
                     case "3":
@@ -48,7 +41,7 @@ namespace csharp_calcolatrice
                             var n1 = int.Parse(Console.ReadLine());
                             Console.WriteLine("Inserisci un'altro numero");
                             var n2 = int.Parse(Console.ReadLine());
-                            Console.WriteLine(CalcoliHelper.Moltiplicazione(n1, n2));
+                            Console.WriteLine($"La moltiplicazione fra {n1} e {n2} è di: {CalcoliHelper.Moltiplica(n1, n2)}");
                             break;
                         }
                     case "4":
@@ -56,7 +49,7 @@ namespace csharp_calcolatrice
                             Console.WriteLine("Valore assoluto di un numero");
                             Console.WriteLine("Inserisci un numero");
                             var n1 = int.Parse(Console.ReadLine());
-                            Console.WriteLine(CalcoliHelper.ValoreABS(n1));
+                            Console.WriteLine($"Il volre assoluto di {n1} è di: {CalcoliHelper.ValoreAssoluto(n1)}");
                             break;
                         }
                     case "5":
@@ -66,7 +59,7 @@ namespace csharp_calcolatrice
                             var n1 = int.Parse(Console.ReadLine());
                             Console.WriteLine("Inserisci un'altro numero");
                             var n2 = int.Parse(Console.ReadLine());
-                            Console.WriteLine(CalcoliHelper.Minimo(n1, n2));
+                            Console.WriteLine($"Il valore minimo dei numeri({n1}, {n2}) è: {CalcoliHelper.Minimo(n1, n2)}");
                             break;
                         }
                     case "6":
@@ -76,7 +69,7 @@ namespace csharp_calcolatrice
                             var n1 = int.Parse(Console.ReadLine());
                             Console.WriteLine("Inserisci un'altro numero");
                             var n2 = int.Parse(Console.ReadLine());
-                            Console.WriteLine(CalcoliHelper.Massimo(n1, n2));
+                            Console.WriteLine($"Il valore massimo dei numeri({n1}, {n2}) è: {CalcoliHelper.Massimo(n1, n2)}");
                             break;
                         }
                     case "7":
@@ -86,7 +79,7 @@ namespace csharp_calcolatrice
                             var n1 = int.Parse(Console.ReadLine());
                             Console.WriteLine("Inserisci un'altro numero per l'esponente");
                             var n2 = int.Parse(Console.ReadLine());
-                            Console.WriteLine(CalcoliHelper.Potenza(n1, n2));
+                            Console.WriteLine($"La potenza del numero base {n1} alla {n2} è di: {CalcoliHelper.Potenza(n1, n2)}");
                             break;
                         }
                 }

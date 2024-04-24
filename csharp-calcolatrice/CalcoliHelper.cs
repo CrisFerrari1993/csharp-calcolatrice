@@ -1,75 +1,117 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace csharp_calcolatrice
 {
-    static class CalcoliHelper
+    static public class CalcoliHelper
     {
-        
-        // i metodi ripetuti piu volte negli oggetti vengono definiti overload di metodi 🤓
-        // I parametri sono stati costruiti per accettare float, double, int, decimal, long.
-
-        public static T Somma<T>(T n1, T n2) where T : INumber<T>
+        public static int Somma(int n1, int n2)
         {
             return n1 + n2;
         }
-        public static string Differenza<T>(T n1, T n2) where T : INumber<T>
-        {
-            return $"La differenza fra {n1} e {n2} è di: {n1 - n2}";
-        }
-        public static string Moltiplicazione<T>(T n1, T n2) where T : INumber<T>
-        {
-            return $"Il risultato della moltiplicazione fra {n1} e {n2} è di: {n1 * n2}";
-        }
-        public static string ValoreABS(int n)
-        {
-            return $"Il valore assoluto di {n} è di: {Math.Abs(n)}";
-        }
-        public static string ValoreABS(double n)
-        {
-            return $"Il valore assoluto di {n} è di: {Math.Abs(n)}";
-        }
-        public static string Minimo<T>(T n1, T n2) where T : INumber<T>
-        {
-            if (n1 < n2) return $"Il valore minimo fra {n1} e {n2} è: {n1}";
-            else return $"Il valore minimo fra {n1} e {n2} è: {n2}";
-        }
-        public static string Massimo<T>(T n1, T n2) where T : INumber<T>
-        {
-            if (n1 > n2) return $"Il valore massimo fra {n1} e {n2} è: {n1}";
-            else return $"Il valore massimo fra {n1} e {n2} è: {n2}";
-        }
-        // **************BONUS*****************
-        public static string Potenza(int Base, int Esponente)
-        {
-            double res = 1;
 
-            //Se l'esponente è positivo, moltiplica la base per se stessa esponente volte
-            if(Esponente > 0)
+        public static double Somma(double n1, double n2)
+        {
+            return n1 + n2;
+        }
+
+        public static int Differenza(int n1, int n2)
+        {
+            return n1 - n2;
+        }
+
+        public static double Differenza(double n1, double n2)
+        {
+            return n1 - n2;
+        }
+
+        public static int Moltiplica(int n1, int n2)
+        {
+            return n1 * n2;
+        }
+
+        public static double Moltiplica(double n1, double n2)
+        {
+            return n1 * n2;
+        }
+
+        public static int ValoreAssoluto(int n)
+        {
+            if (n < 0)
             {
-                for(int i = 0; i < Esponente; i++)
-                {
-                    res *= Base;
-                }
+                return -n;
             }
-            // Se l'esponente è negativo, calcola l'inverso della potenza positiva
-            else if (Esponente < 0)
-            {
-                Esponente.ToString().Remove(0, 1);
-                Esponente = (int)Esponente;
-                for (int i = 0; i < Esponente; i++)
-                {
-                    res /= Base;
-                }
-            } 
-            // Se l'esponente è zero, il risultato è 1
-            // (poiché qualsiasi numero elevato alla potenza 0 è uguale a 1)
-
-            return $"La potenza di {Base} alla {Esponente} è di: {(int)res}";
+            return n;
         }
+
+        public static double ValoreAssoluto(double n)
+        {
+            if (n < 0)
+            {
+                return -n;
+            }
+            return n;
+        }
+
+        public static int Minimo(int n1, int n2)
+        {
+            if(n1 < n2)
+            {
+                return n1;
+            }
+            return n2;
+        }
+
+        public static double Minimo(double n1, double n2)
+        {
+            if (n1 < n2)
+            {
+                return n1;
+            }
+            return n2;
+
+        }
+
+        public static int Massimo(int n1, int n2)
+        {
+            if(n1 > n2)
+            {
+                return n1;
+            }
+            return n2;
+
+        }
+        public static double Massimo(double n1, double n2)
+        {
+            if (n1 > n2)
+            {
+                return n1;
+            }
+            return n2;
+        }
+
+        // Bouns
+        public static decimal Potenza(decimal numBase, int esponente)
+        {
+            if (numBase == 0)
+            {
+                return 1;
+            }
+            if(esponente < 0)
+            {
+                esponente = -esponente;
+                numBase = 1 / numBase;
+            }
+            if(esponente == 0)
+            {
+                return 1;
+            }
+            return numBase * Potenza(numBase, esponente - 1);
+        }
+
+
     }
 }
