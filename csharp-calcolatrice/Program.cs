@@ -7,6 +7,12 @@ namespace csharp_calcolatrice
         static void Main(string[] args)
         {
 
+            Console.WriteLine(Calcolatrice.PotenzaVer4(2, -3));
+            Console.WriteLine(Calcolatrice.PotenzaVer4(2, 3));
+            Console.WriteLine(Calcolatrice.PotenzaVer4(-2, 3));
+            Console.WriteLine(Calcolatrice.PotenzaVer4(0, -1));
+
+
             string userChoice = "";
             
             while (userChoice != "esci")

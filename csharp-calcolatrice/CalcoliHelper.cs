@@ -12,9 +12,10 @@ namespace csharp_calcolatrice
         
         // i metodi ripetuti piu volte negli oggetti vengono definiti overload di metodi 🤓
         // I parametri sono stati costruiti per accettare float, double, int, decimal, long.
-        public static string Somma<T>(T n1, T n2) where T : INumber<T>
+
+        public static T Somma<T>(T n1, T n2) where T : INumber<T>
         {
-            return $"La somma di {n1} e {n2} è di: {n1 + n2}";
+            return n1 + n2;
         }
         public static string Differenza<T>(T n1, T n2) where T : INumber<T>
         {
